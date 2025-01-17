@@ -1,0 +1,255 @@
+:root {
+    /* Основные цвета */
+    --primary-color: #623494;
+    /* Фиолетовый */
+    --secondary-color: #FFD700;
+    /* Желтый */
+    --background-color: #FDFBF9;
+    /* Светлый фон */
+    --text-color: #333333;
+    /* Темный текст */
+
+    /* Дополнительные цвета */
+    --accent-color: #61B8FF;
+    /* Голубой */
+    --hover-color: #B96AB5;
+    /* Темно-фиолетовый */
+}
+
+@font-face {
+    font-family: Herojus;
+    src: url(../../font/HerojusRegular.woff2);
+}
+
+body {
+    font-family: 'Herojus', sans-serif;
+    /* Используем липовую ссылку */
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--hover-color);
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background: var(--accent-color);
+    color: white;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+
+.content {
+    padding: 40px;
+}
+
+.content h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-size: 40px;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 15px;
+}
+
+.card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-content {
+    padding: 20px;
+    font-size: 23px;
+}
+
+.card-content h3 {
+    margin: 0 0 10px;
+    color: var(--text-color);
+}
+
+.card-content p {
+    margin: 0;
+    color: var(--text-color);
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Fullscreen image styles */
+.fullscreen-img {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.fullscreen-img img {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 70px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Mobile-first approach */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 10px;
+    }
+
+    nav a {
+        font-size: 1.2rem;
+        padding: 10px;
+        text-align: left;
+        width: 100%;
+        background-color: var(--primary-color);
+        color: white;
+        border: 1px solid var(--primary-color);
+    }
+
+    nav a:hover {
+        background-color: var(--hover-color);
+    }
+
+    .hamburger {
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+        display: block;
+        margin-top: 10px;
+    }
+
+    nav.active {
+        display: flex;
+    }
+}
+
+/* Базовые стили для бургера */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hamburger .bar {
+    width: 30px;
+    height: 4px;
+    background-color: white;
+    border-radius: 4px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* При открытии меню анимация */
+nav.active ~ .hamburger .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+nav.active ~ .hamburger .bar:nth-child(2) {
+    opacity: 0;
+}
+
+nav.active ~ .hamburger .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* Анимация при клике (когда меню открыто) */
+@media (max-width: 768px) {
+    .hamburger {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    nav.active ~ .hamburger {
+        transform: rotate(90deg);
+    }
+}
+
