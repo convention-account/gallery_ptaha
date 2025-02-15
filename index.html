@@ -14,7 +14,7 @@
 
 <body>
     <header>
-        <div class="logo">Herojus</div>
+        <div class="logo">Herojus - <br><bl>Heroiam</bl> <yl>Slava</yl></div>
         <nav class="navbar">
             <a href="https://ptaha-news.online">PAGRINDINIS</a>
             <a href="https://ptaha-news.online/source/routes/choice">LAIKRAŠČIAI</a>
@@ -27,88 +27,30 @@
             <span class="bar"></span>
         </div>
     </header>
-    
+
+    <div id="simple-alert" class="alert">
+        <span class="alert-message">Увага! Фото ще завантажуються на сайт, вибачте за незручності!</span>
+        <span class="close-btn" onclick="closeAlert()">×</span>
+    </div>
+
     <div class="hero">
         <h1>MOKYKLOS NUOTRAUKŲ GALERIJA</h1>
     </div>
 
     <div class="content">
-        <h2>NAUJAUSI ĮVYKIAI</h2>
-        <div class="grid">
-            <div class="card">
-                <!-- Используем Fancybox для открытия картинок -->
-                <a href="static/photo/IMG_8478.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_8478.JPG" alt="Event Image">
-                </a>
-            </div>
-            <div class="card">
-                <a href="static/photo/IMG_1672.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_1672.JPG" alt="Event Image">
-                </a>
-            </div>
-            <div class="card">
-                <a href="static/photo/IMG_8812.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_8812.JPG" alt="Event Image">
-                </a>
-            </div>
-        </div>
-
-        <div class="grid">
-            <div class="card">
-                <a href="static/photo/IMG_8721.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_8721.JPG" alt="Event Image">
-                </a>
-            </div>
-            <div class="card">
-                <a href="static/photo/IMG_1547.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_1547.JPG" alt="Event Image">
-                </a>
-            </div>
-            <div class="card">
-                <a href="static/photo/IMG_7666.JPG" data-fancybox="gallery">
-                    <img src="static/photo/IMG_7666.JPG" alt="Event Image">
-                </a>
-            </div>
-        </div>
+        <!-- <h2>NAUJAUSI ĮVYKIAI</h2> -->
+        <h2 style="cursor: pointer;">
+            <a href="pages/asambleja-decem25.html"><img src="static/icons/cursor.png" class="cursor-ico">ASAMBLEJA VASARIS 2025</a>
+        </h2>
+        <h2 style="cursor: pointer;">
+            <a href="pages/asambleja-octobdec24.html"><img src="static/icons/cursor.png" class="cursor-ico">ASAMBLEJA SPALIS<br>IR<br>GRUODIS
+                2024</a>
+        </h2>
     </div>
-
-    <div class="grid">
-        <div class="card">
-            <a href="static/photo/IMG_1473.JPG" data-fancybox="gallery">
-                <img src="static/photo/IMG_1473.JPG" alt="Event Image">
-            </a>
-        </div>
-        <div class="card">
-            <a href="static/photo/IMG_7916.JPG" data-fancybox="gallery">
-                <img src="static/photo/IMG_7916.JPG" alt="Event Image">
-            </a>
-        </div>
-        <div class="card">
-            <a href="static/photo/IMG_0342.JPG" data-fancybox="gallery">
-                <img src="static/photo/IMG_0342.JPG" alt="Event Image">
-            </a>
-        </div>
-    </div>
-
-    <div class="grid">
-        <div class="card">
-            <a href="static/photo/IMG_1137.JPG" data-fancybox="gallery">
-                <img src="static/photo/IMG_1137.JPG" alt="Event Image">
-            </a>
-        </div>
-        <div class="card">
-            <a href="static/photo/IMG_9365.JPG" data-fancybox="gallery">
-                <img src="static/photo/IMG_9365.JPG" alt="Event Image">
-            </a>
-        </div>
-    </div>
-
     <footer>
         &copy; 2025 HEROJUS. VISOS TEISĖS SAUGOMOS.
     </footer>
 
-    <!-- Добавляем скрипты для Fancybox -->
-    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
     <script src="static/js/script.js"></script>
 </body>
 

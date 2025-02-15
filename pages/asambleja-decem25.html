@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UA Herojus Gallery</title>
+    <link rel="stylesheet" type="text/css" href="../static/css/styles.css">
+    <!-- Добавляем ссылки на Fancybox -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link rel="stylesheet" href="../font/HerojusRegular.woff2">
+    <link rel="icon" type="image/x-icon" href="../static/icons/herojus_purple_logo.ico">
+</head>
+
+<body>
+    <header>
+        <div class="logo">Herojus - <br>
+            <bl>Heroiam</bl>
+            <yl>Slava</yl>
+        </div>
+        <nav class="navbar">
+            <a href="https://ptaha-news.online">PAGRINDINIS</a>
+            <a href="https://ptaha-news.online/source/routes/choice">LAIKRAŠČIAI</a>
+            <a href="https://herojus.lt/lt/herojus">APIE</a>
+            <a href="https://herojus.lt/lt/kontaktai">KONTAKTAI</a>
+        </nav>
+        <div class="hamburger" onclick="toggleMenu()">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>ASAMBLEJA FEBRUARY 2025</h1>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const imageFiles = [
+                "photo-2/DSC_1765.webp",
+                "photo-2/DSC_1793.webp",
+                "photo-2/DSC_1817.webp",
+                "photo-2/DSC_1828.webp",
+                "photo-2/DSC_1836.webp",
+                "photo-2/DSC_1860.webp",
+                "photo-2/DSC_1890.webp",
+                "photo-2/DSC_1898.webp",
+                "photo-2/DSC_1915.webp",
+                "photo-2/DSC_1930.webp",
+                "photo-2/DSC_1964.webp",
+                "photo-2/DSC_1968.webp",
+                "photo-2/DSC_1974.webp",
+                "photo-2/DSC_1990.webp",
+                "photo-2/DSC_1993.webp",
+                "photo-2/DSC_1996.webp",
+                "photo-2/DSC_2008.webp",
+                "photo-2/DSC_2011.webp",
+                "photo-2/DSC_2017.webp",
+                "photo-2/DSC_2054.webp",
+                "photo-2/DSC_2056.webp",
+                "photo-2/DSC_2081.webp",
+                "photo-2/DSC_2083.webp",
+                "photo-2/DSC_2084.webp",
+                "photo-2/DSC_2123.webp",
+                "photo-2/DSC_2130.webp",
+                "photo-2/DSC_2151.webp",
+                "photo-2/DSC_2168.webp",
+                "photo-2/DSC_2187.webp",
+                "photo-2/DSC_2196.webp",
+                "photo-2/DSC_2199.webp",
+                "photo-2/DSC_2225.webp",
+                "photo-2/DSC_2251.webp",
+                "photo-2/DSC_2309.webp",
+                "photo-2/DSC_2324.webp",
+                "photo-2/DSC_2332.webp",
+                "photo-2/DSC_2357.webp",
+                "photo-2/DSC_2377.webp",
+                "photo-2/DSC_2394.webp",
+                "photo-2/DSC_2396.webp",
+                "photo-2/DSC_2400.webp",
+                "photo-2/DSC_2423.webp",
+                "photo-2/DSC_2428.webp",
+                "photo-2/DSC_2445.webp",
+                "photo-2/DSC_2474.webp",
+                "photo-2/DSC_2499.webp",
+                "photo-2/DSC_2505.webp",
+                "photo-2/DSC_2560.webp",
+                "photo-2/DSC_2576.webp",
+                "photo-2/DSC_2632.webp",
+                "photo-2/DSC_2633 копия.webp",
+                "photo-2/DSC_2633.webp",
+                "photo-2/DSC_2635.webp",
+                "photo-2/DSC_2637.webp",
+                "photo-2/DSC_2641.webp",
+                "photo-2/DSC_2642.webp",
+                "photo-2/DSC_2651.webp",
+                "photo-2/DSC_2656.webp",
+                "photo-2/DSC_2665.webp",
+                "photo-2/DSC_2670.webp",
+                "photo-2/DSC_2671.webp",
+                "photo-2/DSC_2672.webp",
+                "photo-2/DSC_2678.webp",
+                "photo-2/DSC_2712.webp",
+                "photo-2/DSC_2734.webp",
+                "photo-2/DSC_2740.webp",
+                "photo-2/DSC_2742.webp",
+                "photo-2/DSC_2743.webp",
+                "photo-2/DSC_2755.webp",
+                "photo-2/DSC_2757.webp",
+                "photo-2/DSC_2760.webp",
+                "photo-2/DSC_2778.webp",
+                "photo-2/DSC_2797.webp",
+                "photo-2/DSC_2798.webp",
+                "photo-2/DSC_2811.webp",
+                "photo-2/DSC_2815.webp",
+                "photo-2/DSC_2831.webp",
+                "photo-2/DSC_2837.webp",
+                "photo-2/DSC_2841.webp",
+                "photo-2/DSC_2861.webp",
+                "photo-2/DSC_2868.webp",
+                "photo-2/DSC_2870.webp",
+                "photo-2/DSC_2901.webp",
+                "photo-2/DSC_2903.webp",
+                "photo-2/DSC_2904.webp",
+                "photo-2/DSC_2921.webp",
+                "photo-2/DSC_2947.webp",
+                "photo-2/DSC_2953.webp",
+                "photo-2/DSC_2973.webp",
+                "photo-2/DSC_3031.webp",
+                "photo-2/DSC_3079.webp",
+                "photo-2/DSC_3112.webp",
+                "photo-2/DSC_3139.webp",
+                "photo-2/DSC_3154.webp",
+                "photo-2/DSC_3156.webp",
+                "photo-2/DSC_3182.webp",
+                "photo-2/DSC_3186.webp",
+                "photo-2/DSC_3191.webp",
+                "photo-2/DSC_3197.webp",
+                "photo-2/DSC_3204.webp",
+                "photo-2/DSC_3228.webp",
+                "photo-2/DSC_3254.webp",
+                "photo-2/DSC_3261.webp",
+                "photo-2/DSC_3280.webp",
+                "photo-2/DSC_3289.webp",
+                "photo-2/DSC_3301.webp",
+                "photo-2/DSC_3305.webp",
+                "photo-2/DSC_3310.webp",
+                "photo-2/DSC_3318.webp",
+                "photo-2/DSC_1661.webp",
+                "photo-2/DSC_1703.webp",
+                "photo-2/DSC_1718.webp",
+                "photo-2/DSC_1734.webp",
+                "photo-2/DSC_1757.webp"
+            ];
+
+            const contentDiv = document.querySelector('.content');
+
+            for (let i = 0; i < imageFiles.length; i += 3) {
+                const gridDiv = document.createElement('div');
+                gridDiv.classList.add('grid');
+
+                for (let j = 0; j < 3; j++) {
+                    const imageIndex = i + j;
+                    if (imageIndex < imageFiles.length) {
+                        const cardDiv = document.createElement('div');
+                        cardDiv.classList.add('card');
+
+                        const link = document.createElement('a');
+                        link.href = imageFiles[imageIndex];
+                        link.dataset.fancybox = "gallery";
+
+                        const image = document.createElement('img');
+                        image.src = imageFiles[imageIndex];
+                        image.alt = "Event Image";
+
+                        const coverImage = document.createElement('img'); // Дубликат для обложки
+                        coverImage.src = imageFiles[imageIndex];
+                        coverImage.alt = "Event Image";
+                        coverImage.classList.add('cover'); // Добавляем класс для стилизации
+
+                        link.appendChild(image);
+                        link.appendChild(coverImage); // Добавляем дубликат внутрь ссылки
+                        cardDiv.appendChild(link);
+                        gridDiv.appendChild(cardDiv);
+                    }
+                }
+                contentDiv.appendChild(gridDiv);
+            }
+        });
+    </script>
+
+    <!-- <div class="content">
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1703.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1703.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1718.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1718.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1734.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1734.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1757.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1757.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1765.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1765.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1793.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1793.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1817.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1817.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1828.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1828.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1836.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1836.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1860.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1860.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1890.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1890.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1898.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1898.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1915.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1915.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1930.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1930.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1964.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1964.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1968.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1968.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1974.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1974.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1990.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1990.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1993.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1993.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1996.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1996.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2008.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2008.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2011.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2011.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2017.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2017.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2034.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2034.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2054.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2054.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2056.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2056.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2081.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2081.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2083.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2083.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2084.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2084.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2123.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2123.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2130.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2130.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2151.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2151.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2168.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2168.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2187.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2187.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2196.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2196.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2199.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2199.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2225.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2225.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2251.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2251.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2309.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2309.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2324.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2324.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2332.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2332.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2357.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2357.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2377.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2377.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2394.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2394.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2396.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2396.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2400.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2400.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2423.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2423.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2428.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2428.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2445.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2445.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2453.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2453.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2474.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2474.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2499.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2499.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2505.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2505.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2560.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2560.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2576.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2576.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2632.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2632.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2633 копия.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2633 копия.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2633.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2633.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2635.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2635.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2637.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2637.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2641.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2641.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2642.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2642.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2644.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2644.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2651.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2651.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2656.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2656.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2659.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2659.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2665.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2665.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2670.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2670.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2671.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2671.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2672.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2672.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2678.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2678.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2712.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2712.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2734.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2734.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2740.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2740.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2742.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2742.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2743.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2743.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2755.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2755.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2757.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2757.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2760.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2760.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2778.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2778.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2797.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2797.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2798.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2798.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2811.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2811.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2815.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2815.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2831.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2831.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2837.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2837.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2841.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2841.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2861.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2861.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2868.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2868.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2870.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2870.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2871.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2871.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2901.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2901.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2903.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2903.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2904.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2904.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2921.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2921.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2944.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2944.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2945.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2945.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2947.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2947.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_2953.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2953.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_2973.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_2973.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3031.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3031.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3079.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3079.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3112.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3112.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3139.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3139.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3154.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3154.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3156.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3156.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3182.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3182.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3186.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3186.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3191.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3191.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3197.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3197.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3204.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3204.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3228.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3228.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3254.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3254.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3261.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3261.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3280.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3280.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3289.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3289.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3301.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3301.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_3305.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3305.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3310.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3310.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_3318.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_3318.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1661.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1661.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1703.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1703.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1718.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1718.webp" alt="Event Image">
+                </a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <a href="photo-2/DSC_1734.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1734.webp" alt="Event Image">
+                </a>
+            </div>
+            <div class="card">
+                <a href="photo-2/DSC_1757.webp" data-fancybox="gallery">
+                    <img src="photo-2/DSC_1757.webp" alt="Event Image">
+                </a>
+            </div>
+        </div> -->
+
+
+
+    <div class="content">
+    </div>
+
+
+    <footer>
+        &copy; 2025 HEROJUS. VISOS TEISĖS SAUGOMOS.
+    </footer>
+
+    <!-- Добавляем скрипты для Fancybox -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script>
+    <script src="../static/js/script.js"></script>
+</body>
+
+</html>
